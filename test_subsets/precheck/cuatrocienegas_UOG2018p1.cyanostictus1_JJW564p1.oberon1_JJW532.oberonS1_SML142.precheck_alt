@@ -1,0 +1,22 @@
+Running pre-check on ./counts/cuatrocienegas_UOG2018p1.cyanostictus1_JJW564p1.oberon1_JJW532.oberonS1_SML142.counts
+===============================================================================
+Checking that concordant patterns are more common that discordant
+(Note that this is normal when introgression is extreme, but could also
+indicate the taxa are out of order):
+-------------------------------------------------------------------------------
+WARNING: Total count of discordant pattern BBABA=64 is higher than concordant pattern AABBA=54
+===============================================================================
+===============================================================================
+Checking that divergences are correctly ordered (P1 and P2 should diverge AFTER P3 and P4)
+-------------------------------------------------------------------------------
+WARNING: Total count of P1/P2 terminal substitutions ABAAA=618 is higher than P3/P4 terminal substitutions AAABA=336
+WARNING: Total count of P1/P2 terminal substitutions ABAAA=618 is higher than P3/P4 terminal substitutions AABAA=355
+WARNING: Total count of P1/P2 terminal substitutions BAAAA=520 is higher than P3/P4 terminal substitutions AAABA=336
+WARNING: Total count of P1/P2 terminal substitutions BAAAA=520 is higher than P3/P4 terminal substitutions AABAA=355
+===============================================================================
+===============================================================================
+Checking that terminal branch pairs are proportionate approximately
+-------------------------------------------------------------------------------
+BAAAA/ABAAA ratio = 0.8414239482200647 (520/618)
+AABAA/AAABA ratio = 1.056547619047619 (355/336)
+===============================================================================
