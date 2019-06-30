@@ -32,3 +32,11 @@ This file is part of dfoil.
 dfoil is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as publihed by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
 dfoil is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with Foobar.  If not, see (http://www.gnu.org/licenses/).
+
+## HDF5 Updates
+
+### fasta2dfoil.py
+
+fasta2dfoil.py now saves output as an HDF5 file if the -H,--hdf5 option is used.
+
+
