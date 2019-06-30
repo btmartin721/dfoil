@@ -80,9 +80,10 @@ def generate_argparser():
                         help="""Order of the 5 (or 4) taxa separated by commas.
                                 Names must be  consistent in all input files,
                                 outgroup should be last""")
-    parser.add_argument("--append", "-a", action="store_true", default=False,
-                        help="""append all counts files to single object,
-                                much more efficient.""")
+    parser.add_argument("-H", "--hdf5", action="store_true", default=False,
+                        help="""Writes counts files in HDF5 format,
+                                much more efficient when writing large numbers
+                                of files.""")
     parser.add_argument("--version", action="version", version="2017-11-07",
                         help="display version information and quit")
     return parser
@@ -107,7 +108,7 @@ def main(arguments=None):
     else:
         raise RuntimeError("Invalid number of taxa, use 5 or 4")
 
-    if not args.append:
+    if not args.hdf5:
         with open(args.out, 'w') as outfile:
             outfile.write("#chrom\tposition\t{}\n".format('\t'.join(headers)))
         for infilename in args.fastafile:
@@ -141,47 +142,46 @@ def main(arguments=None):
             position += 1
         return ''
 
-    elif args.append:
+    elif args.hdf5:
 
-        h5file = open_file(args.out, mode="a", title="counts files")
-        group = h5file.create_group("/", "counts", "Counts Files")
-        table = h5file.create_table(group, "readout", Files, "Counts Table")
-        counts = table.row
+        with open_file(args.out, mode="a", title="counts files") as h5file:
+            group = h5file.create_group("/", "counts", "Counts Files")
+            table = h5file.create_table(group, "readout", Files, "Counts Table")
+            counts = table.row
 
-        counts["header"] = "#chrom\tposition\t{}\n".format('\t'.join(headers))
+            counts["header"] = "#chrom\tposition\t{}\n".format('\t'.join(headers))
 
-        for infilename in args.fastafile:
-            site_count = {}
-            seqs = {}
-            for header, seq in fasta_iter(infilename):
-                seqs[header] = seq
-            if list(sorted(seqs.keys())) != list(sorted(taxa)):
-                raise RuntimeError(
-                    "Error: Labels from {} ({}) do not match --names ({})".format(
-                        infilename, seqs.keys(), taxa))
-            for label in seqs:
-                if len(seqs[label]) != len(seqs[taxa[0]]):
+            for infilename in args.fastafile:
+                site_count = {}
+                seqs = {}
+                for header, seq in fasta_iter(infilename):
+                    seqs[header] = seq
+                if list(sorted(seqs.keys())) != list(sorted(taxa)):
                     raise RuntimeError(
-                        "Error: Sequences in {} are of unequal length ({})".format(
-                            infilename, ",".join(["{}={}".format(
-                                x, len(seqs[x])) for x in seqs])))
-            for i in range(len(list(seqs.values())[0])):
-                site = [str(seqs[name][i]).upper() for name in taxa]
-                if len(set(site)) > 2:
-                    continue
-                if set(site) - set('ATGC'):
-                    continue
-                site_code = ''.join(['A' if x == site[-1].upper() else 'B'
-                                     for x in site])
-                site_count[site_code] = site_count.get(site_code, 0) + 1
-                counts["data"] = "{}\t{}\t{}\n".format(infilename, position,
-                              '\t'.join([str(site_count.get(x, 0))
-                                         for x in headers]))
-            position += 1
+                        "Error: Labels from {} ({}) do not match --names ({})".format(
+                            infilename, seqs.keys(), taxa))
+                for label in seqs:
+                    if len(seqs[label]) != len(seqs[taxa[0]]):
+                        raise RuntimeError(
+                            "Error: Sequences in {} are of unequal length ({})".format(
+                                infilename, ",".join(["{}={}".format(
+                                    x, len(seqs[x])) for x in seqs])))
+                for i in range(len(list(seqs.values())[0])):
+                    site = [str(seqs[name][i]).upper() for name in taxa]
+                    if len(set(site)) > 2:
+                        continue
+                    if set(site) - set('ATGC'):
+                        continue
+                    site_code = ''.join(['A' if x == site[-1].upper() else 'B'
+                                         for x in site])
+                    site_count[site_code] = site_count.get(site_code, 0) + 1
+                    counts["data"] = "{}\t{}\t{}\n".format(infilename, position,
+                                  '\t'.join([str(site_count.get(x, 0))
+                                             for x in headers]))
+                position += 1
 
-        counts.append()
-        table.flush()
-        h5file.close()
+            counts.append()
+            table.flush()
         return ''
 
 if __name__ == "__main__":
