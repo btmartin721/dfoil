@@ -21,7 +21,3 @@ BAAAA/ABAAA ratio = 0.7805343511450382 (409/524)
 AABAA/AAABA ratio = 1.2717391304347827 (351/276)
 WARNING: P3/P4 ratio deviates more than 25% from 1.0
 ===============================================================================
-#chrom	coord	total	dtotal	T12	T34	T1234	DFO_left	DFO_right	DFO_total	DFO_stat	DFO_chisq	DFO_Pvalue	DIL_left	DIL_right	DIL_total	DIL_stat	DIL_chisq	DIL_Pvalue	DFI_left	DFI_right	DFI_total	DFI_stat	DFI_chisq	DFI_Pvalue	DOL_left	DOL_right	DOL_total	DOL_stat	DOL_chisq	DOL_Pvalue	introgression	introgna	intrognone	introg13	introg14	introg23	introg24	introg31	introg41	introg32	introg42	introg123	introg124
-
-counts/cyanostictus_SML139.cuatrocienegas_UOG2019p1.oberonS3_SML150.oberon3_JJW605p1.tab.h5	0	27581	142.0	0.016913817483049924	0.011366520430731301	0.01899858598310431	48.0	69.0	117.0	-0.1794871794871795	3.769230769230769	0.05220363534131456	31.0	86.0	117.0	-0.4700854700854701	25.854700854700855	3.6810712233936727e-07	41.0	23.0	64.0	0.28125	5.0625	0.024448945310089343	24.0	40.0	64.0	-0.25	4.0	0.04550026389635853	none	0	1	0	0	0	0	0	0	0	0	0	0
-

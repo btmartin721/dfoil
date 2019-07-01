@@ -22,9 +22,10 @@ python3 fasta2dfoil.py INPUT.fasta --out OUTPUT.fasta \
 from __future__ import print_function
 import sys
 import argparse
+import os
+
 from itertools import groupby
 from tables import *
-import os
 
 from data_str import Files
 
@@ -188,8 +189,8 @@ def main(arguments=None):
             counts.append()
             table.flush()
             # Debug print statement
-            for row in table:
-                print(row["data"].decode())
+            #for row in table:
+                #print(row["data"].decode())
 
         #h5file.close()
 

@@ -17,7 +17,3 @@ Checking that terminal branch pairs are proportionate approximately
 BAAAA/ABAAA ratio = 0.96875 (186/192)
 AABAA/AAABA ratio = 1.1594202898550725 (480/414)
 ===============================================================================
-#chrom	coord	total	dtotal	T12	T34	T1234	DFO_left	DFO_right	DFO_total	DFO_stat	DFO_chisq	DFO_Pvalue	DIL_left	DIL_right	DIL_total	DIL_stat	DIL_chisq	DIL_Pvalue	DFI_left	DFI_right	DFI_total	DFI_stat	DFI_chisq	DFI_Pvalue	DOL_left	DOL_right	DOL_total	DOL_stat	DOL_chisq	DOL_Pvalue	introgression	introgna	intrognone	introg13	introg14	introg23	introg24	introg31	introg41	introg32	introg42	introg123	introg124
-
-counts/cyanostictus_SML139.cyanostictus_SML137.oberonS3_SML150.oberon3_JJW605p1.tab.h5	0	36120	148.0	0.005232558139534884	0.012375415282392027	0.018092469545957918	52.0	90.0	142.0	-0.2676056338028169	10.169014084507042	0.0014282062718483646	46.0	96.0	142.0	-0.352112676056338	17.6056338028169	2.71782007948973e-05	15.0	9.0	24.0	0.25	1.5	0.22067136191984693	9.0	15.0	24.0	-0.25	1.5	0.22067136191984693	124	0	0	0	0	0	0	0	0	0	0	0	1
-

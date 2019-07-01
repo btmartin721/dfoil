@@ -12,14 +12,13 @@ USAGE: dfoil.py INPUTFILE1 ... --out OUTPUTFILE1 ...
 from __future__ import print_function, unicode_literals
 import sys
 import argparse
-import multitables
 from warnings import warn
 from numpy import mean
 from scipy.stats import chi2
-from tables import *
 import matplotlib
 from precheck import pre_check
 
+from tables import *
 from data_str import *
 
 
@@ -641,7 +640,6 @@ def main(arguments=None):
                 with open_file(infilename, mode="r") as h5file:
                     table = h5file.root.files.counts
                     counts = table.row
-                    # Debug print statement
                     for row in table:
                         try:
                             arr = row["data"].decode().rstrip().split()
@@ -731,7 +729,6 @@ def main(arguments=None):
             with open_file(infilename, mode="r+") as h5file:
                 table = h5file.root.files.counts
                 counts = table.row
-                # Debug print statement
                 for row in table:
                     try:
                         arr = row["data"].decode().rstrip().split()
@@ -789,8 +786,9 @@ def main(arguments=None):
                 dfoils.append()
                 out_table.flush()
 
-                for row in out_table:
-                    print(row["DFOILheader"].decode() + "\n" + row["DFOILdata"].decode())
+                # Debug print statement
+                #for row in out_table:
+                    #print(row["DFOILheader"].decode() + "\n" + row["DFOILdata"].decode())
 
             # ==== PLOT GRAPHS =====
             if args.plot:
