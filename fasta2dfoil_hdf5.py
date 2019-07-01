@@ -144,12 +144,15 @@ def main(arguments=None):
 
     elif args.hdf5:
 
-        with open_file(args.out, mode="a", title="counts files") as h5file:
-            group = h5file.create_group("/", "counts", "Counts Files")
-            table = h5file.create_table(group, "readout", Files, "Counts Table")
-            counts = table.row
-
-            counts["header"] = "#chrom\tposition\t{}\n".format('\t'.join(headers))
+        with open_file(args.out, mode="a", title="ExDFOIL Tables") as h5file:
+            if "/files" not in h5file:
+                group = h5file.create_group("/", "files", "ExDFOIL Files")
+                table = h5file.create_table(group, "counts", Files, "Counts Table")
+                counts = table.row
+                counts["header"] = "#chrom\tposition\t{}\n".format('\t'.join(headers))
+            else:
+                table = h5file.root.files.counts
+                counts = table.row
 
             for infilename in args.fastafile:
                 site_count = {}
@@ -175,13 +178,29 @@ def main(arguments=None):
                     site_code = ''.join(['A' if x == site[-1].upper() else 'B'
                                          for x in site])
                     site_count[site_code] = site_count.get(site_code, 0) + 1
-                    counts["data"] = "{}\t{}\t{}\n".format(infilename, position,
-                                  '\t'.join([str(site_count.get(x, 0))
-                                             for x in headers]))
+
+                counts["data"] = "{}\t{}\t{}\n".format(args.out, position,
+                             '\t'.join([str(site_count.get(x, 0))
+                                        for x in headers]))
                 position += 1
+
 
             counts.append()
             table.flush()
+            # Debug print statement
+            for row in table:
+                print(row["data"].decode())
+
+        #h5file.close()
+
+        #test = open_file("./counts/counts.h5", mode="r")
+        #table = test.root.files.counts
+        #for row in table:
+            #print(row["data"].decode())
+        #test.close()
+
+            # Debug print
+
         return ''
 
 if __name__ == "__main__":

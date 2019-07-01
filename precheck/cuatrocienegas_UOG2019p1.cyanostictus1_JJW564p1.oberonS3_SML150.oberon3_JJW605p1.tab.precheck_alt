@@ -1,0 +1,26 @@
+Running pre-check on table rows in ./counts/cuatrocienegas_UOG2019p1.cyanostictus1_JJW564p1.oberonS3_SML150.oberon3_JJW605p1.tab.h5
+===============================================================================
+Checking that concordant patterns are more common that discordant
+(Note that this is normal when introgression is extreme, but could also
+indicate the taxa are out of order):
+-------------------------------------------------------------------------------
+WARNING: Total count of discordant pattern BBABA=70 is higher than concordant pattern AABBA=65
+===============================================================================
+===============================================================================
+Checking that divergences are correctly ordered (P1 and P2 should diverge AFTER P3 and P4)
+-------------------------------------------------------------------------------
+WARNING: Total count of P1/P2 terminal substitutions ABAAA=680 is higher than P3/P4 terminal substitutions AAABA=283
+WARNING: Total count of P1/P2 terminal substitutions ABAAA=680 is higher than P3/P4 terminal substitutions AABAA=337
+WARNING: Total count of P1/P2 terminal substitutions BAAAA=540 is higher than P3/P4 terminal substitutions AAABA=283
+WARNING: Total count of P1/P2 terminal substitutions BAAAA=540 is higher than P3/P4 terminal substitutions AABAA=337
+===============================================================================
+===============================================================================
+Checking that terminal branch pairs are proportionate approximately
+-------------------------------------------------------------------------------
+BAAAA/ABAAA ratio = 0.7941176470588235 (540/680)
+AABAA/AAABA ratio = 1.1908127208480566 (337/283)
+===============================================================================
+#chrom	coord	total	dtotal	T12	T34	T1234	DFO_left	DFO_right	DFO_total	DFO_stat	DFO_chisq	DFO_Pvalue	DIL_left	DIL_right	DIL_total	DIL_stat	DIL_chisq	DIL_Pvalue	DFI_left	DFI_right	DFI_total	DFI_stat	DFI_chisq	DFI_Pvalue	DOL_left	DOL_right	DOL_total	DOL_stat	DOL_chisq	DOL_Pvalue	introgression	introgna	intrognone	introg13	introg14	introg23	introg24	introg31	introg41	introg32	introg42	introg123	introg124
+
+counts/cuatrocienegas_UOG2019p1.cyanostictus1_JJW564p1.oberonS3_SML150.oberon3_JJW605p1.tab.h5	0	28340	138.0	0.021524347212420608	0.010938602681721948	0.02161256175017643	29.0	88.0	117.0	-0.5042735042735043	29.752136752136753	4.9096486098854086e-08	37.0	80.0	117.0	-0.36752136752136755	15.803418803418804	7.027541147319738e-05	18.0	31.0	49.0	-0.2653061224489796	3.4489795918367347	0.0632908322333452	26.0	23.0	49.0	0.061224489795918366	0.1836734693877551	0.6682351417952493	124	0	0	0	0	0	0	0	0	0	0	0	1
+

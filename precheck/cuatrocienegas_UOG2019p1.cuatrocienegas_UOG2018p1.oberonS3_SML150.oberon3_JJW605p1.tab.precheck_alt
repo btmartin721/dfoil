@@ -1,0 +1,25 @@
+Running pre-check on table rows in ./counts/cuatrocienegas_UOG2019p1.cuatrocienegas_UOG2018p1.oberonS3_SML150.oberon3_JJW605p1.tab.h5
+===============================================================================
+Checking that concordant patterns are more common that discordant
+(Note that this is normal when introgression is extreme, but could also
+indicate the taxa are out of order):
+-------------------------------------------------------------------------------
+WARNING: Total count of discordant pattern BBABA=83 is higher than concordant pattern ABAAA=71
+WARNING: Total count of discordant pattern BBABA=83 is higher than concordant pattern BAAAA=71
+WARNING: Total count of discordant pattern BBABA=83 is higher than concordant pattern AABBA=63
+===============================================================================
+===============================================================================
+Checking that divergences are correctly ordered (P1 and P2 should diverge AFTER P3 and P4)
+-------------------------------------------------------------------------------
+Pass
+===============================================================================
+===============================================================================
+Checking that terminal branch pairs are proportionate approximately
+-------------------------------------------------------------------------------
+BAAAA/ABAAA ratio = 1.0 (71/71)
+AABAA/AAABA ratio = 1.2089041095890412 (353/292)
+===============================================================================
+#chrom	coord	total	dtotal	T12	T34	T1234	DFO_left	DFO_right	DFO_total	DFO_stat	DFO_chisq	DFO_Pvalue	DIL_left	DIL_right	DIL_total	DIL_stat	DIL_chisq	DIL_Pvalue	DFI_left	DFI_right	DFI_total	DFI_stat	DFI_chisq	DFI_Pvalue	DOL_left	DOL_right	DOL_total	DOL_stat	DOL_chisq	DOL_Pvalue	introgression	introgna	intrognone	introg13	introg14	introg23	introg24	introg31	introg41	introg32	introg42	introg123	introg124
+
+counts/cuatrocienegas_UOG2019p1.cuatrocienegas_UOG2018p1.oberonS3_SML150.oberon3_JJW605p1.tab.h5	0	27548	116.0	0.002577319587628866	0.011706838971976188	0.019502323217656454	27.0	86.0	113.0	-0.5221238938053098	30.805309734513273	2.852562752675425e-08	30.0	83.0	113.0	-0.4690265486725664	24.858407079646017	6.169937472044751e-07	2.0	4.0	6.0	-0.3333333333333333	0	1.0	5.0	1.0	6.0	0.6666666666666666	0	1.0	na	1	0	0	0	0	0	0	0	0	0	0	0
+

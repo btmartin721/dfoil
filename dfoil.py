@@ -559,6 +559,8 @@ def generate_argparser():
                               "(formely pre-dfoil)"))
     parser.add_argument("--version", action="version", version="2017-011-25",
                         help="display version information and quit")
+    parser.add_argument("--hdf5", "-h", action="store_true", default=False,
+                        help=("Read and write from HDF5 table"))
     return parser
 
 
