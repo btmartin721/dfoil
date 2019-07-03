@@ -17,6 +17,6 @@ WARNING: Total count of P1/P2 terminal substitutions BAAAA=529 is higher than P3
 ===============================================================================
 Checking that terminal branch pairs are proportionate approximately
 -------------------------------------------------------------------------------
-BAAAA/ABAAA ratio = 0.8076335877862595 (529/655)
-AABAA/AAABA ratio = 1.1541218637992832 (322/279)
+BAAAA/ABAAA ratio = 0.807633587786 (529/655)
+AABAA/AAABA ratio = 1.1541218638 (322/279)
 ===============================================================================

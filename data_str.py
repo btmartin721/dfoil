@@ -8,3 +8,4 @@ class Files(tables.IsDescription):
     DFOILheader       = tables.StringCol(420)   # 420-character String
     DFOILdata         = tables.StringCol(600)   # 600-charcter String
     analyzed          = tables.StringCol(150)   # 150-character String
+    summary           = tables.StringCol(300)   # 300-character String
