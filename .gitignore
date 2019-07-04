@@ -22,6 +22,19 @@ var/
 .installed.cfg
 *.egg
 
+# Testing purposes
+old_test_files/
+counts/
+dfoil/
+precheck/
+
+# Original dfoil python scripts
+dfoil_analyze.py
+dfoil.py
+dfoil_sim_commands.txt
+fasta2dfoil.py
+dfoil_sim.py
+
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
