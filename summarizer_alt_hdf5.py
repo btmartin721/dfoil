@@ -47,14 +47,17 @@ def main():
         counts = ctab.row
         dfoils = dtab.row
 
+        clist = list()
         for row in ctab:
             line = list(row["data"].decode().rstrip().split())
 
             if line[0].startswith("counts/"):
                 basename = list(line[0].split("/"))
                 taxa = list(basename[1].split("."))
+                taxa = list(taxa[:-2])
             else:
                 taxa = list(line[0].split("."))
+                taxa = taxa[:-2]
 
             col1 = list(line[3])
             col2 = list(line[4])
@@ -75,12 +78,11 @@ def main():
             DFIp = line[24]
             DOLstat = line[28]
             DOLp = line[30]
-            dlist.append(introgression + DFOstat + DFOp + DILstat + \
-                        DILp + DFIstat + DFIp + DOLstat + DOLp)
+            dlist.extend([introgression, DFOstat, DFOp, DILstat, DILp, DFIstat, DFIp, DOLstat, DOLp])
 
         cCols = " ".join([" ".join(v) for v in clist])
         dCols = " ".join(str(v) for v in dlist)
-        joined = cCols + dCols
+        joined = cCols + " " + dCols
 
         if "/files/summary" not in h5file:
             out_table = h5file.create_table("/files", "summary", Files, "Summary Table")
@@ -96,6 +98,7 @@ def main():
         # Debug print statement
         #for row in out_table:
             #print(row["summary"])
+
 
     return 0
 

@@ -1,0 +1,11 @@
+Individual batch popID speciesID subspeciesID
+cyanogenys_TWR246 2 cyanogenys cyanogenys cyanogenys
+cuatrocienegas_UOG2018p1 1 cuatrocienegas cyanostictus cyanostictus
+cuatrocienegas_UOG2019p1 1 cuatrocienegas cyanostictus cyanostictus
+cyanostictus_SML137 2 cyanostictus cyanostictus cyanostictus
+cyanostictus_SML139 2 cyanostictus cyanostictus cyanostictus
+cyanostictus1_JJW564p1 1 cyanostictus1 cyanostictus cyanostictus
+oberon10_JJW683p1 1 oberon10 oberon oberon_black
+oberon10_JJW684p1 1 oberon10 oberon oberon_black
+oberon10_JJW685 2 oberon10 oberon oberon_black
+oberon10_JJW685p1 1 oberon10 oberon oberon_black

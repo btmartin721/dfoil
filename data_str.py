@@ -9,3 +9,4 @@ class Files(tables.IsDescription):
     DFOILdata         = tables.StringCol(600)   # 600-charcter String
     analyzed          = tables.StringCol(150)   # 150-character String
     summary           = tables.StringCol(300)   # 300-character String
+    all_summary       = tables.StringCol(400)   # 300-character String
