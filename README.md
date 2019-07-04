@@ -37,7 +37,7 @@ If you need info about the specific input file format, see the ExDFOIL GitHub pa
 pytables  
 numpy  
 Python 2 or 3 (tested with v3.7.3)  
-GNU parallel
+GNU parallel  
 All the requirements of the original dfoil.py and ExDFOIL scripts.  
 
 ## Purpose for modifying / writing code  
