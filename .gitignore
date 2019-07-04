@@ -34,6 +34,9 @@ dfoil.py
 dfoil_sim_commands.txt
 fasta2dfoil.py
 dfoil_sim.py
+dfoil.pdf
+sample_data.zip
+original_dfoil/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
