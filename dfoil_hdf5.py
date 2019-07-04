@@ -563,7 +563,7 @@ def generate_argparser():
     parser.add_argument("--version", action="version", version="2017-011-25",
                         help="display version information and quit")
     parser.add_argument("--hdf5", "-H", action="store_true", default=False,
-                        help=("Read and write from HDF5 Files"))
+                        help=("Writes output to HDF5 tables"))
     return parser
 
 

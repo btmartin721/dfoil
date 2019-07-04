@@ -11,7 +11,7 @@ def Get_Arguments():
     Parse command-line arguments. Imported with argparse.
     Returns: object of command-line arguments.
     """
-    parser = argparse.ArgumentParser(description="Summarizes Results from the "
+    parser = argparse.ArgumentParser(description="Summarizes Results from the dfoil_hdf5.py output"
                                     "ExDFOIL pipeline", add_help=False)
 
     required_args = parser.add_argument_group("Required Arguments")
@@ -21,7 +21,7 @@ def Get_Arguments():
     required_args.add_argument("-i", "--infile",
                                 type=str,
                                 required=True,
-                                help="Output from dfoil.py")
+                                help="Output from dfoil_hdf5.py")
 
     optional_args.add_argument("-h", "--help",
                                 action="help",

@@ -12,8 +12,7 @@ def Get_Arguments():
     Parse command-line arguments. Imported with argparse.
     Returns: object of command-line arguments.
     """
-    parser = argparse.ArgumentParser(description="Summarizes Results from the "
-                                    "ExDFOIL pipeline", add_help=False)
+    parser = argparse.ArgumentParser(description="Merges multiple HDF5 files", add_help=False)
 
     required_args = parser.add_argument_group("Required Arguments")
     optional_args = parser.add_argument_group("Optional Arguments")
@@ -22,14 +21,11 @@ def Get_Arguments():
     required_args.add_argument("-p", "--path",
                                 type=str,
                                 required=True,
-                                help="Path to counts directory; no slash at end")
+                                help="Path to counts directory; should ONLY contain the relevant HDF5 files")
     required_args.add_argument("-o", "--out",
                                 type=str,
                                 required=True,
-                                help="Output HDF5 table")
-
-
-
+                                help="Specify merged HDF5 filename")
     optional_args.add_argument("-h", "--help",
                                 action="help",
                                 help="Displays this help menu")
