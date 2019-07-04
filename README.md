@@ -40,11 +40,17 @@ Python 2 or 3 (tested with v3.7.3)
 GNU parallel  
 All the requirements of the original dfoil.py and ExDFOIL scripts.  
 
+I included a conda environment file (environment.yml) that you can use to install the dependencies. But admittedly it hasn't been tested with a new environment.  
+
 ## Purpose for modifying / writing code  
 
 My main goal here was to make [ExDFOIL](https://github.com/SheaML/ExDFOIL) more efficient given that in large RADseq datasets it will write millions of files to disk (my dataset tried to write 6 million files X 4).   
 
 To do so, I have modified the original [dfoil](http://www.github.com/jbpease/dfoil) scripts to write to HDF5 files using PyTables.  Also, I have drastically reduced the number of files written to disk (down to 25% of what it was) by writing the ExDFOIL output from the three pipeline steps (\*.counts, \*.dfoil_alt, and \*.summary_alt) to a single HDF5 file as separate tables. It still writes one file per test because I couldn't think of a better way to parallelize it than GNU parallel.  
+
+## exdfoil_hdf5_run.sh  
+
+Here is a script to run the whole pipeline. There are several command-line arguments. See comments inside the script.  
 
 ## fasta2dfoil_hdf5.py  
 fasta2dfoil_hdf5.py now saves output as an HDF5 table if the -H,--hdf5 option is used. The original script runs if -H flag is not provided.    
